@@ -1,6 +1,6 @@
 # 🚀 Svelte Skelton Template
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/r4ai/svelte-skelton-template)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/r4ai/svelte-skelton-template)
 
 ## 🧞 Commands
 
