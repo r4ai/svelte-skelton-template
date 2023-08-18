@@ -15,3 +15,16 @@
   </label>
   <button on:click={() => deleteTodo(id)}>×</button>
 </div>
+
+<style>
+  div {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    gap: 0.5rem;
+  }
+
+  div > label {
+    flex: 1;
+  }
+</style>

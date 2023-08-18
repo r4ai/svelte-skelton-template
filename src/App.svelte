@@ -61,7 +61,18 @@
 </main>
 
 <style>
+  main {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
   form {
     margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  form > input {
+    flex: 1;
   }
 </style>
