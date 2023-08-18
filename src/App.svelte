@@ -1,15 +1,28 @@
 <script lang="ts">
   import TodoItem from "./lib/TodoItem.svelte";
+
+  let todos = [
+    { id: 1, title: "Test1" },
+    { id: 2, title: "Test2" },
+  ];
+
+  let todoTitle = "";
+
+  const handleAddTodo = () => {
+    todos = [...todos, { id: todos.length + 1, title: todoTitle }];
+    todoTitle = "";
+  };
 </script>
 
 <main>
   <h2>ToDo List</h2>
   <div>
-    <TodoItem id={1} title="Test1" />
-    <TodoItem id={2} title="Test2" />
+    {#each todos as todo}
+      <TodoItem id={todo.id} title={todo.title} />
+    {/each}
   </div>
-  <form>
-    <input type="text" placeholder="Add a new ToDo" />
+  <form on:submit|preventDefault={handleAddTodo}>
+    <input type="text" placeholder="Add a new ToDo" bind:value={todoTitle} />
     <button>Add</button>
   </form>
 </main>
