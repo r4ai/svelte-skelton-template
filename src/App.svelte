@@ -1,10 +1,19 @@
 <script lang="ts">
   import TodoItem from "./lib/TodoItem.svelte";
 
-  let todos = [
-    { id: 1, title: "Test1", completed: false },
-    { id: 2, title: "Test2", completed: false },
-  ];
+  type Todo = {
+    id: number;
+    title: string;
+    completed: boolean;
+  };
+
+  let todos: Todo[] = localStorage.getItem("todos")
+    ? JSON.parse(localStorage.getItem("todos"))
+    : [];
+
+  console.log("rendered");
+
+  $: localStorage.setItem("todos", JSON.stringify(todos));
 
   let todoTitle = "";
 
