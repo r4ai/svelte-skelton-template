@@ -2,14 +2,17 @@
   import TodoItem from "./lib/TodoItem.svelte";
 
   let todos = [
-    { id: 1, title: "Test1" },
-    { id: 2, title: "Test2" },
+    { id: 1, title: "Test1", completed: false },
+    { id: 2, title: "Test2", completed: false },
   ];
 
   let todoTitle = "";
 
   const handleAddTodo = () => {
-    todos = [...todos, { id: todos.length + 1, title: todoTitle }];
+    todos = [
+      ...todos,
+      { id: todos.length + 1, title: todoTitle, completed: false },
+    ];
     todoTitle = "";
   };
 </script>
@@ -18,7 +21,11 @@
   <h2>ToDo List</h2>
   <div>
     {#each todos as todo}
-      <TodoItem id={todo.id} title={todo.title} />
+      <TodoItem
+        id={todo.id}
+        title={todo.title}
+        bind:completed={todo.completed}
+      />
     {/each}
   </div>
   <form on:submit|preventDefault={handleAddTodo}>
