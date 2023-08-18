@@ -24,6 +24,10 @@
     ];
     todoTitle = "";
   };
+
+  const deleteTodo = (id: number) => {
+    todos = todos.filter((x) => x.id !== id);
+  };
 </script>
 
 <main>
@@ -35,6 +39,7 @@
         id={todo.id}
         title={todo.title}
         bind:completed={todo.completed}
+        {deleteTodo}
       />
     {/each}
   </div>
@@ -45,6 +50,7 @@
         id={todo.id}
         title={todo.title}
         bind:completed={todo.completed}
+        {deleteTodo}
       />
     {/each}
   </div>

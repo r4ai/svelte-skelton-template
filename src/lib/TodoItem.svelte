@@ -2,6 +2,7 @@
   export let id: number;
   export let title: string;
   export let completed: boolean;
+  export let deleteTodo: (id: number) => void;
 </script>
 
 <div>
@@ -12,4 +13,5 @@
   >
     {title}
   </label>
+  <button on:click={() => deleteTodo(id)}>×</button>
 </div>
