@@ -20,7 +20,18 @@
 <main>
   <h2>ToDo List</h2>
   <div>
-    {#each todos as todo}
+    <h3>未完了</h3>
+    {#each todos.filter((x) => !x.completed) as todo}
+      <TodoItem
+        id={todo.id}
+        title={todo.title}
+        bind:completed={todo.completed}
+      />
+    {/each}
+  </div>
+  <div>
+    <h3>完了済み</h3>
+    {#each todos.filter((x) => x.completed) as todo}
       <TodoItem
         id={todo.id}
         title={todo.title}
